@@ -22,9 +22,11 @@ import defaultStyles from "./Connections.styles";
 
 export type ConnectionsProps = {
   classNamePrefix?: string;
+  signOut?: any;
+  user?: any;
 };
 
-const Connections = ({ classNamePrefix = "ft" }: ConnectionsProps) => {
+const Connections = ({ classNamePrefix = "ft", signOut, user }: ConnectionsProps) => {
   const styleWithTheme = useWithTheme();
   const pfx = withClassNamePrefix(classNamePrefix);
 
@@ -78,6 +80,12 @@ const Connections = ({ classNamePrefix = "ft" }: ConnectionsProps) => {
               Open Graph Explorer
             </Button>
           </Link>
+          {/* <div className={pfx("v-divider")} />
+          <Button
+            className={pfx("button")}
+            variant={"filled"}
+            onPress={signOut}
+          >Log out  {user.username}</Button> */}
         </Workspace.TopBar.AdditionalControls>
       </TopBarWithLogo>
       <Workspace.Content>

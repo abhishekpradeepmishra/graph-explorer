@@ -1,3 +1,4 @@
+
 import react from "@vitejs/plugin-react";
 import * as fs from "fs";
 import { defineConfig, loadEnv } from "vite";
@@ -34,11 +35,11 @@ export default defineConfig(async ({ mode }) => {
           cert: fs.readFileSync(
             "../graph-explorer-proxy-server/cert-info/server.crt"
           ),
-        },
+        }
       };
     } else {
       return {
-        host: true,
+        host: true
       };
     }
   };
@@ -51,5 +52,13 @@ export default defineConfig(async ({ mode }) => {
       __GRAPH_EXP_VERSION__: JSON.stringify(process.env.npm_package_version),
     },
     plugins: [htmlPlugin(), react()],
+    resolve: {
+      alias: [
+        {
+          find: "./runtimeConfig",
+          replacement: ("./runtimeConfig.browser"),
+        },
+      ],
+    }
   };
 });

@@ -50,13 +50,15 @@ import defaultStyles from "./DataExplorer.styles";
 
 export type ConnectionsProps = {
   classNamePrefix?: string;
+  signOut?: any;
+  user?: any;
 };
 
 const DEFAULT_COLUMN = {
   width: 150,
 };
 
-const DataExplorer = ({ classNamePrefix = "ft" }: ConnectionsProps) => {
+const DataExplorer = ({ classNamePrefix = "ft", signOut, user }: ConnectionsProps) => {
   const styleWithTheme = useWithTheme();
   const pfx = withClassNamePrefix(classNamePrefix);
   const navigate = useNavigate();
@@ -278,6 +280,12 @@ const DataExplorer = ({ classNamePrefix = "ft" }: ConnectionsProps) => {
               Open Graph Explorer
             </Button>
           </Link>
+          <div className={pfx("v-divider")} />
+          <Button
+            className={pfx("button")}
+            variant={"filled"}
+            onPress={signOut}
+          >Log out  {user.username}</Button>
         </Workspace.TopBar.AdditionalControls>
       </TopBarWithLogo>
       <Workspace.TopBar>

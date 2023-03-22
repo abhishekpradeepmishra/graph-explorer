@@ -45,6 +45,8 @@ import defaultStyles from "./GraphExplorer.styles";
 
 export type GraphViewProps = {
   classNamePrefix?: string;
+  signOut?: any;
+  user?: any;
 };
 
 const RESIZE_ENABLE_TOP = {
@@ -58,7 +60,7 @@ const RESIZE_ENABLE_TOP = {
   topLeft: false,
 };
 
-const GraphExplorer = ({ classNamePrefix = "ft" }: GraphViewProps) => {
+const GraphExplorer = ({ classNamePrefix = "ft", signOut, user }: GraphViewProps) => {
   const styleWithTheme = useWithTheme();
   const pfx = withClassNamePrefix(classNamePrefix);
   const config = useConfiguration();
@@ -226,6 +228,12 @@ const GraphExplorer = ({ classNamePrefix = "ft" }: GraphViewProps) => {
               Open Connections
             </Button>
           </Link>
+          <div className={pfx("v-divider")} />
+          <Button
+            className={pfx("button")}
+            variant={"filled"}
+            onPress={signOut}
+          >Log out  {user.username}</Button>
         </Workspace.TopBar.AdditionalControls>
       </TopBarWithLogo>
 

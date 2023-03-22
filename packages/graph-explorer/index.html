@@ -29,6 +29,11 @@
       Learn how to configure a non-root public URL by running `npm run build`.
     -->
     <title>Graph Explorer</title>
+    <script>
+      if (global === undefined) {
+        var global = window;
+      }
+    </script>
   </head>
   <body>
     <div id="root"></div>
