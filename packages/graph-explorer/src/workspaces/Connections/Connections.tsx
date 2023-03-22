@@ -80,12 +80,12 @@ const Connections = ({ classNamePrefix = "ft", signOut, user }: ConnectionsProps
               Open Graph Explorer
             </Button>
           </Link>
-          {/* <div className={pfx("v-divider")} />
+          <div className={pfx("v-divider")} />
           <Button
             className={pfx("button")}
             variant={"filled"}
             onPress={signOut}
-          >Log out  {user.username}</Button> */}
+          >Log out  {user.username}</Button>
         </Workspace.TopBar.AdditionalControls>
       </TopBarWithLogo>
       <Workspace.Content>
