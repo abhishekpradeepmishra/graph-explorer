@@ -1,5 +1,27 @@
 # graph-explorer Change Log
 
+## Upcoming
+
+The next release will include the following feature enhancements and bug fixes:
+
+**Features**
+- Added SageMaker Notebook support (https://github.com/aws/graph-explorer/pull/178)
+- Added Default Connection support (https://github.com/aws/graph-explorer/pull/108)
+- Added query language indicators to created connections (https://github.com/aws/graph-explorer/pull/164)
+- Added match precision option to keyword search (https://github.com/aws/graph-explorer/pull/175)
+- Add toggle for limit on retrieved vertex neighbors (https://github.com/aws/graph-explorer/pull/176)
+
+**Bug fixes**
+- Fixed search UI crashing on node select/preview (https://github.com/aws/graph-explorer/pull/177)
+- Fixed Gremlin/openCypher matching ID property on all keyword searches (https://github.com/aws/graph-explorer/pull/169)
+
+## Release 1.3.1
+
+This patch release includes bugfixes for Release 1.3.0.
+
+**Bug fixes**
+- Fix proxy issue with non-IAM Neptune requests (https://github.com/aws/graph-explorer/pull/166)
+
 ## Release 1.3.0
 
 This release includes the following feature enhancements and bug fixes:
